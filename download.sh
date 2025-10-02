@@ -58,14 +58,14 @@ curl -s -L "$URL" -o "$TEMP_FILE" || {
 }
 
 # Get file extension based on MIME type
-EXTENSION=$(get_file_extension "$TEMP_FILE")
+# EXTENSION=$(get_file_extension "$TEMP_FILE")
 
 # Always construct filename from the URL, replacing slashes with hyphens
-FILENAME=$(echo "$URL" | sed -E 's|^https?://||' | sed -E 's|^www\.||' | sed 's|/$||' | sed 's|/|-|g')
+# FILENAME=$(echo "$URL" | sed -E 's|^https?://||' | sed -E 's|^www\.||' | sed 's|/$||' | sed 's|/|-|g')
 
 # Add extension to the filename
-FILENAME="${FILENAME}${EXTENSION}"
-
+# FILENAME="${FILENAME}${EXTENSION}"
+FILENAME="professors.json"
 # Make sure we don't end up with just an extension
 if [ "$FILENAME" = "${EXTENSION}" ]; then
   FILENAME="index${EXTENSION}"
